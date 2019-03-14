@@ -57,3 +57,7 @@ def coder(message, offset):
 message_one = "jxu evviuj veh jxu iusedt cuiiqwu yi vekhjuud."
 
 print(decoder(message_one, 10))
+
+message_two = "bqdradyuzs ygxfubxq omqemd oubtqde fa oapq kagd yqeemsqe ue qhqz yadq eqogdq!"
+
+print(decoder(message_two, 14))
