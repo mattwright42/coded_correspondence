@@ -89,3 +89,24 @@ message = "dfc jhjj ifyh yf hrfgiv xulk? vmph bfzo! qtl eeh gvkszlfl yyvww kpi h
 keyword = "friends"
 
 print(vigenere_decoder(message, keyword))
+
+
+def vigenere_coder(message, keyword):
+    keyword_repeated = ""
+    while len(keyword_repeated) < len(message):
+        keyword_repeated += keyword
+    keyword_final = keyword_repeated[0:len(message)]
+    translated_message = ""
+    for i in range(0, len(message)):
+        if message[i] not in punctuation:
+            ln = alphabet.find(message[i]) + alphabet.find(keyword_final[i])
+            translated_message += alphabet[ln % 26]
+        else:
+            translated_message += message[i]
+    return translated_message
+
+
+message_for_v = "thanks for teaching me all these cool ciphers! you really are the best!"
+keyword = "besties"
+
+print(vigenere_coder(message_for_v, keyword))
