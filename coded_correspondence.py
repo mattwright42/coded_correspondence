@@ -67,3 +67,25 @@ coded_message = "vhfinmxkl atox kxgwxkxw tee hy maxlx hew vbiaxkl tl hulhexmx. p
 for i in range(1, 26):
     print("offset: " + str(i))
     print("\t " + decoder(coded_message, i) + "\n")
+
+
+def vigenere_decoder(coded_message, keyword):
+    keyword_repeated = ""
+    while len(keyword_repeated) < len(coded_message):
+        keyword_repeated += keyword
+    keyword_final = keyword_repeated[0:len(coded_message)]
+    translated_message = ""
+    for i in range(0, len(coded_message)):
+        if not coded_message[i] in punctuation:
+            ln = alphabet.find(coded_message[i]) - \
+                alphabet.find(keyword_final[i])
+            translated_message += alphabet[ln % 26]
+        else:
+            translated_message += coded_message[i]
+    return translated_message
+
+
+message = "dfc jhjj ifyh yf hrfgiv xulk? vmph bfzo! qtl eeh gvkszlfl yyvww kpi hpuvzx dl tzcgrywrxll!"
+keyword = "friends"
+
+print(vigenere_decoder(message, keyword))
