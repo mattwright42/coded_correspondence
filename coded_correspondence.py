@@ -61,3 +61,9 @@ print(decoder(message_one, 10))
 message_two = "bqdradyuzs ygxfubxq omqemd oubtqde fa oapq kagd yqeemsqe ue qhqz yadq eqogdq!"
 
 print(decoder(message_two, 14))
+
+coded_message = "vhfinmxkl atox kxgwxkxw tee hy maxlx hew vbiaxkl tl hulhexmx. px'ee atox mh kxteer lmxi ni hnk ztfx by px ptgm mh dxxi hnk fxlltzxl ltyx."
+
+for i in range(1, 26):
+    print("offset: " + str(i))
+    print("\t " + decoder(coded_message, i) + "\n")
